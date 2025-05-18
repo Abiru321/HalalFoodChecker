@@ -197,7 +197,7 @@ public class SafaScanController {
     public void aiOutput(ActionEvent event) {
 
 
-        String apiKey = "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";
+        String apiKey = System.getenv("aiAPIKey");
 
 
         // Get the input text
