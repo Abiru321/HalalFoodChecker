@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.HalalFoodTracker.SafaScan.SafaScanController">
+   <center>
+      <AnchorPane prefHeight="407.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/BckGround.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="31.0" layoutX="-4.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="119.0" />
+            <Label fx:id="aiResponse" alignment="TOP_LEFT" layoutX="287.0" layoutY="91.0" prefHeight="303.0" prefWidth="294.0" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <effect>
+                  <Lighting diffuseConstant="2.0" specularConstant="0.23">
+                     <bumpInput>
+                        <Bloom>
+                           <input>
+                              <InnerShadow />
+                           </input>
+                        </Bloom>
+                     </bumpInput>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Calibri Light" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="aiInput" layoutX="128.0" layoutY="83.0" prefHeight="24.0" prefWidth="114.0" promptText="Ask a question..." style="-fx-background-color: #9bb6e1;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <Label layoutX="169.0" layoutY="302.0" text="Exit">
+               <font>
+                  <Font name="Calibri Light Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="216.0" prefHeight="32.0" prefWidth="104.0" text="Language: ">
+               <font>
+                  <Font name="Calibri Light Italic" size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="exitBtn" layoutX="129.0" layoutY="303.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="25.0" prefWidth="120.0" text="Exit">
+               <font>
+                  <Font name="Candara Light Italic" size="12.0" />
+               </font>
+               <effect>
+                  <Shadow>
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </Button>
+            <Button fx:id="Confirm" accessibleRole="INCREMENT_BUTTON" layoutY="83.0" mnemonicParsing="false" onAction="#aiOutput" prefHeight="25.0" prefWidth="111.0" text="Ask">
+               <font>
+                  <Font name="Calibri Light Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="uploadImage" layoutX="126.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleUploadImage" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #9bb6e1;" text="Upload Image">
+               <font>
+                  <Font name="Candara Light Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="setEng" layoutX="128.0" layoutY="219.0" mnemonicParsing="false" onAction="#setEnglish" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #9bb6e1;" text="Eng">
+               <font>
+                  <Font name="Calibri Light Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="setFr" layoutX="198.0" layoutY="219.0" mnemonicParsing="false" onAction="#setFrench" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #9bb6e1;" text="Fr" />
+            <ImageView fx:id="loadingIcon" fitHeight="24.0" fitWidth="18.0" layoutX="421.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/loading.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="154.0" layoutY="-5.0" text="Safa Scan" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light Italic" size="72.0" />
+               </font>
+               <effect>
+                  <Shadow />
+               </effect>
+            </Label>
+            <Label layoutX="149.0" layoutY="-10.0" text="Safa Scan" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light Italic" size="72.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
